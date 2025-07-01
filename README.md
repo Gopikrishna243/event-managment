@@ -1,7 +1,7 @@
 # event-managment
 # 🎉 Event Management Web App
 
-A Django-based web application that allows users to book services for various event types such as **Marriage, Birthday, Cradle Ceremony, Naming Ceremony, and Death Day**.
+A Django-based web application that allows users to book services for various event types such as **Marriage, Birthday, Cradle Ceremony, Naming Ceremony**.
 
 ---
 
