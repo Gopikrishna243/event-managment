@@ -1,0 +1,28 @@
+<!-- date_time_slot.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Date & Time</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Select Preferred Date & Time for Contact</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Select Date (minimum 2 days from today):</label><br>
+        <input type="date" name="date" min="{{ min_date }}" required><br>
+
+        <label>Select Time Slot:</label><br>
+        <select name="time_slot" required>
+            <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+            <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
+            <option value="4:00 PM - 6:00 PM">4:00 PM - 6:00 PM</option>
+            <option value="6:00 PM - 8:00 PM">6:00 PM - 8:00 PM</option>
+        </select><br>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</body>
+</html>

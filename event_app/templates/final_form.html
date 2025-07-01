@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Booking Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Book time slot for confirmation call</h2>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="contact" placeholder="Contact Number" required>
+        <input type="text" name="area" placeholder="Area" required>
+
+        <label for="date">Select Date (after 2 days):</label>
+        <input type="date" name="date" min="{{ min_date }}" required>
+
+        <label for="time">Select Time:</label>
+        <select name="time" required>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+        </select>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</body>
+</html>
+

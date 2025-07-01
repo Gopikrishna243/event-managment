@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank You for Booking with ALL EVENTS MANAGEMENT!</h1>
+    <p>Dear {{ name }},</p>
+    <p>Your confirmation call for the <strong>{{ event_type }}</strong> event in {{ event_city }} with {{ guest_count }} guests has been booked.</p>
+    <p>We will contact you on {{ selected_date }} at {{ selected_time }} for a confirmation call</p>
+</body>
+</html>
+

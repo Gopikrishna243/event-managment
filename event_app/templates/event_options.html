@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #fff9f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            color: #c04b4b;
+            margin-top: 30px;
+        }
+        .event-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .event-images img {
+            width: 250px;
+            height: 170px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to ALL EVENTS MANAGEMENT</h1>
+    <p>Select your Event Type:</p>
+    
+    <div class="event-images">
+        <div>
+            <img src="{% static 'images/marriage.jpg' %}" alt="Marriage">
+            <p>Marriage</p>
+        </div>
+        <div>
+            <img src="{% static 'images/birthday.jpg' %}" alt="Birthday">
+            <p>Birthday</p>
+        </div>
+        <div>
+            <img src="{% static 'images/cradle.jpg' %}" alt="Cradle Ceremony">
+            <p>Cradle Ceremony</p>
+        </div>
+    </div>
+</body>
+</html>
+

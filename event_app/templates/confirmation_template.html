@@ -1,0 +1,17 @@
+<!-- confirmation.html -->
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<head>
+    <title>Booking Confirmed</title>
+</head>
+<body>
+    <h2>🎉 Thank You, {{ name }}!</h2>
+    <p>Your {{ event_type }} event in {{ event_city }} with {{ guest_count }} guests has been booked successfully.</p>
+    <p>Our team will contact you shortly.</p>
+    <p>✅ You selected: <strong>{{ selected_date }}</strong> at <strong>{{ selected_time }}</strong></p>
+    <p>📞 We will contact you at that time.</p>
+    <h3>All Event Manager</h3>
+</body>
+</html>

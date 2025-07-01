@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Event Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Enter Event Details {{ event_type }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="event_city">Event City:</label>
+        <input type="text" name="event_city" id="event_city" required>
+
+        <label for="guest_count">Number of Guests:</label>
+        <input type="number" name="guest_count" id="guest_count" required>
+
+        <label for="manage_type">Do you want us to handle the event fully?</label>
+        <select name="manage_type" id="manage_type" required>
+            <option value="Event is on us">Event is on us</option>
+            <option value="Just give service info">Just give service info</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
+

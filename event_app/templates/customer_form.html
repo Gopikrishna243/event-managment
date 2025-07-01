@@ -1,0 +1,82 @@
+<!-- templates/customer_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Events Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        form {
+            margin-top: 30px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <div style="text-align: center;">
+    <h1>Welcome to <strong>ALL EVENTS MANAGEMENT</strong></h1>
+    <img src="{% static 'images/marriage.png' %}" alt="Marriage Event" style="width:150px; margin: 10px;">
+    <img src="{% static 'images/birthday.png' %}" alt="Birthday Event" style="width:150px; margin: 10px;">
+    <img src="{% static 'images/cradle.png' %}" alt="Cradle Ceremony" style="width:150px; margin: 10px;">
+</div>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <label>Name:</label>
+            <input type="text" name="name" required>
+            <label>City:</label>
+            <input type="text" name="city" required>
+            <label>Mobile:</label>
+            <input type="text" name="mobile" required>
+            <input type="submit" value="Continue">
+        </form>
+    </div>
+</body>
+</html>

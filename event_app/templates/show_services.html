@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Services</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .service-section {
+            background: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        .service {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Services</h1>
+
+    <div class="service-section">
+        <h2>Marriage pandit</h2>
+        {% for guru in services.Gurus %}
+            <div class="service">
+                {{ guru.name }} - {{ guru.area }} - {{ guru.phone }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="service-section">
+        <h2>Caterers</h2>
+        {% for caterer in services.Caterers %}
+            <div class="service">
+                {{ caterer.name }} - {{ caterer.area }} - {{ caterer.phone }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="service-section">
+        <h2>Venues</h2>
+        {% for venue in services.Venues %}
+            <div class="service">
+                {{ venue.name }} - {{ venue.area }} - {{ venue.phone }}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
